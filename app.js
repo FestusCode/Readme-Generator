@@ -53,7 +53,9 @@ ${answers.contributing}
 ## License
 
 This project is licensed under the ${answers.license} license.`;
-});
+  fs.writeFileSync("README.md", readme, (err) => {
+    if (err) throw err;
+  });
 
-fs.writeFileSync("README.md", readme);
-console.log("README generated!");
+  console.log("README generated!");
+});
